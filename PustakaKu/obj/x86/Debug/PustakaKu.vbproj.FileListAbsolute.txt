@@ -19,3 +19,12 @@ D:\Mchanafi_ik2\Sata\VB2\PustakaKu\PustakaKu\obj\x86\Debug\PustakaKu.vbproj.Gene
 D:\Mchanafi_ik2\VB\VB\PustakaKu\obj\x86\Debug\PustakaKu.exe
 D:\Mchanafi_ik2\VB\VB\PustakaKu\obj\x86\Debug\PustakaKu.xml
 D:\Mchanafi_ik2\VB\VB\PustakaKu\obj\x86\Debug\PustakaKu.pdb
+F:\Kuliah\Kuliah_LP3I\Semester3\Pemrograman Berorientasi OBjek 1 ( java 1)\VB\PustakaKu\obj\x86\Debug\PustakaKu.exe
+F:\Kuliah\Kuliah_LP3I\Semester3\Pemrograman Berorientasi OBjek 1 ( java 1)\VB\PustakaKu\obj\x86\Debug\PustakaKu.xml
+F:\Kuliah\Kuliah_LP3I\Semester3\Pemrograman Berorientasi OBjek 1 ( java 1)\VB\PustakaKu\obj\x86\Debug\PustakaKu.pdb
+F:\Kuliah\Kuliah_LP3I\Semester3\Pemrograman Berorientasi OBjek 1 ( java 1)\VB\PustakaKu\bin\Debug\PustakaKu.exe
+F:\Kuliah\Kuliah_LP3I\Semester3\Pemrograman Berorientasi OBjek 1 ( java 1)\VB\PustakaKu\bin\Debug\PustakaKu.pdb
+F:\Kuliah\Kuliah_LP3I\Semester3\Pemrograman Berorientasi OBjek 1 ( java 1)\VB\PustakaKu\bin\Debug\PustakaKu.xml
+F:\Kuliah\Kuliah_LP3I\Semester3\Pemrograman Berorientasi OBjek 1 ( java 1)\VB\PustakaKu\obj\x86\Debug\PustakaKu.fbuku.resources
+F:\Kuliah\Kuliah_LP3I\Semester3\Pemrograman Berorientasi OBjek 1 ( java 1)\VB\PustakaKu\obj\x86\Debug\PustakaKu.Resources.resources
+F:\Kuliah\Kuliah_LP3I\Semester3\Pemrograman Berorientasi OBjek 1 ( java 1)\VB\PustakaKu\obj\x86\Debug\PustakaKu.vbproj.GenerateResource.Cache
