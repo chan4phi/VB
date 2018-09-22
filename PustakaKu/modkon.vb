@@ -9,7 +9,7 @@ Module modkon
     Public str As String = "Data Source=100.0.0.50;" & _
                             "Initial Catalog=dbMChanafi;" & _
                             "Persist Security Info=True;" & _
-                            "UID=sa;PWD=admin"
+                            "UID=sa;PWD=script"
 
     Public Sub OpenKoneskis()
         If conn.State = ConnectionState.Closed Then
