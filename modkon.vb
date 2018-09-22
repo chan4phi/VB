@@ -1,4 +1,4 @@
-﻿Imports System.Data
+Imports System.Data
 Imports System.Data.Sql
 Imports System.Data.SqlClient
 Module modkon
@@ -6,7 +6,7 @@ Module modkon
     Public sql As String
     Public conn As New SqlConnection
 
-    Public str As String = "Data Source=100.0.0.26;" & _
+    Public str As String = "Data Source=100.0.0.50;" & _
                             "Initial Catalog=dbMChanafi;" & _
                             "Persist Security Info=True;" & _
                             "UID=sa;PWD=admin"
