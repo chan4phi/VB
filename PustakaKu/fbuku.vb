@@ -7,9 +7,6 @@ Public Class fbuku
         Dim dr, dr2 As SqlDataReader
         Dim strsql, sql2 As String
 
-       
-
-
         Try
             strsql = "select * from Pengarang"
             cmd = New SqlCommand(strsql, conn)
@@ -19,6 +16,7 @@ Public Class fbuku
 
                 cbpengarang.Items.Add(dr("PengarangID") & " - " & dr("NamaPengarang"))
             Loop
+
             dr.Close()
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -40,6 +38,7 @@ Public Class fbuku
             MsgBox(ex.ToString)
         End Try
         Call TutupKoneksi()
+        lihat_list_buku()
     End Sub
 
     Private Sub tbadd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbadd.Click
@@ -69,7 +68,7 @@ Public Class fbuku
                 Exit Sub
         End If
         Try
-            query = "insert into Buku (BukuID, Judul, PengarangID, Stok, Penerbit, Sinopsis) values ( " & uid & ", '" & tbjubuk.Text & "',  '" & pngrng(0) & "', '" & tbstok.Text & "', '" & pnrbt(1) & "', '" & tbsinopsis.Text & "')"
+            query = "insert into Buku (BukuID, Judul, Pengarang, Stok, Penerbit, Sinopsis) values ( " & uid & ", '" & tbjubuk.Text & "',  '" & pngrng(1) & "', '" & tbstok.Text & "', '" & pnrbt(1) & "', '" & tbsinopsis.Text & "')"
 
             cmd = New SqlCommand(query, conn)
             dr = cmd.ExecuteReader
@@ -79,8 +78,11 @@ Public Class fbuku
             MsgBox(ex.Message)
         End Try
 
-        Call TutupKoneksi()
+
         Call bersih()
+        LVbuku.Clear()
+        lihat_list_buku()
+        Call TutupKoneksi()
     End Sub
 
     Private Sub bersih()
@@ -110,11 +112,12 @@ Public Class fbuku
 
             Do While dr.Read
                 LVbuku.Items.Add(dr("BukuID"))
-                LVbuku.Items.Add(LVbuku.Items.Count - 1).SubItems.Add(dr("Judul"))
-                LVbuku.Items.Add(LVbuku.Items.Count - 1).SubItems.Add(dr("PengarangID"))
-                LVbuku.Items.Add(LVbuku.Items.Count - 1).SubItems.Add(dr("Penerbit"))
+                LVbuku.Items(LVbuku.Items.Count - 1).SubItems.Add(dr("Judul"))
+                LVbuku.Items(LVbuku.Items.Count - 1).SubItems.Add(dr("Pengarang"))
+                LVbuku.Items(LVbuku.Items.Count - 1).SubItems.Add(dr("Penerbit"))
             Loop
             dr.Close()
+
             Call TutupKoneksi()
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -127,12 +130,20 @@ Public Class fbuku
         Dim dr As SqlDataReader
         idbuku = LVbuku.SelectedItems(0).Text
 
-        Call OpenKoneskis()
-        Dim query As String = "delete from Buku where BukuID= '" + idbuku + "'"
-        cmd = New SqlCommand(query, conn)
-        dr = cmd.ExecuteReader
-        Call TutupKoneksi()
-        dr.Close()
+        Try
+            Call OpenKoneskis()
+            Dim query As String = "delete from Buku where BukuID= '" + idbuku + "'"
 
+            cmd = New SqlCommand(query, conn)
+            dr = cmd.ExecuteReader
+            Call TutupKoneksi()
+            dr.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+        MsgBox("Data berhasil di hapus")
+        LVbuku.Clear()
+        lihat_list_buku()
     End Sub
 End Class

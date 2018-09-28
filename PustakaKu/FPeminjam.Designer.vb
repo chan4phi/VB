@@ -31,10 +31,10 @@ Partial Class FPeminjam
         Me.tbAlmt = New System.Windows.Forms.TextBox()
         Me.tbNoTelp = New System.Windows.Forms.TextBox()
         Me.btSimpan = New System.Windows.Forms.Button()
-        Me.CMSlv = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CMSlv.SuspendLayout()
+        Me.cmspmjnm = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cmspmjnm.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -73,6 +73,7 @@ Partial Class FPeminjam
         '
         'LVpmnjm
         '
+        Me.LVpmnjm.ContextMenuStrip = Me.cmspmjnm
         Me.LVpmnjm.Location = New System.Drawing.Point(12, 165)
         Me.LVpmnjm.Name = "LVpmnjm"
         Me.LVpmnjm.Size = New System.Drawing.Size(623, 207)
@@ -100,26 +101,26 @@ Partial Class FPeminjam
         Me.btSimpan.Name = "btSimpan"
         Me.btSimpan.Size = New System.Drawing.Size(75, 23)
         Me.btSimpan.TabIndex = 8
-        Me.btSimpan.Text = "Button1"
+        Me.btSimpan.Text = "Simpan"
         Me.btSimpan.UseVisualStyleBackColor = True
         '
-        'CMSlv
+        'cmspmjnm
         '
-        Me.CMSlv.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem})
-        Me.CMSlv.Name = "CMSlv"
-        Me.CMSlv.Size = New System.Drawing.Size(153, 70)
+        Me.cmspmjnm.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3})
+        Me.cmspmjnm.Name = "cmspmjnm"
+        Me.cmspmjnm.Size = New System.Drawing.Size(108, 48)
         '
-        'EditToolStripMenuItem
+        'ToolStripMenuItem2
         '
-        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.EditToolStripMenuItem.Text = "Edit"
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem2.Text = "Edit"
         '
-        'DeleteToolStripMenuItem
+        'ToolStripMenuItem3
         '
-        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.DeleteToolStripMenuItem.Text = "Delete"
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem3.Text = "Delete"
         '
         'FPeminjam
         '
@@ -136,7 +137,7 @@ Partial Class FPeminjam
         Me.Controls.Add(Me.Label1)
         Me.Name = "FPeminjam"
         Me.Text = "FPeminjam"
-        Me.CMSlv.ResumeLayout(False)
+        Me.cmspmjnm.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -149,7 +150,10 @@ Partial Class FPeminjam
     Friend WithEvents tbAlmt As System.Windows.Forms.TextBox
     Friend WithEvents tbNoTelp As System.Windows.Forms.TextBox
     Friend WithEvents btSimpan As System.Windows.Forms.Button
-    Friend WithEvents CMSlv As System.Windows.Forms.ContextMenuStrip
-    Friend WithEvents EditToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DeleteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents cmspmnjm As ContextMenuStrip
+    Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents cmspmjnm As ContextMenuStrip
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
 End Class

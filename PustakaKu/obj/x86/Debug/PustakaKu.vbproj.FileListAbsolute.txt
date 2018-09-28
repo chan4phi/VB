@@ -28,3 +28,5 @@ F:\Kuliah\Kuliah_LP3I\Semester3\Pemrograman Berorientasi OBjek 1 ( java 1)\VB\Pu
 F:\Kuliah\Kuliah_LP3I\Semester3\Pemrograman Berorientasi OBjek 1 ( java 1)\VB\PustakaKu\obj\x86\Debug\PustakaKu.fbuku.resources
 F:\Kuliah\Kuliah_LP3I\Semester3\Pemrograman Berorientasi OBjek 1 ( java 1)\VB\PustakaKu\obj\x86\Debug\PustakaKu.Resources.resources
 F:\Kuliah\Kuliah_LP3I\Semester3\Pemrograman Berorientasi OBjek 1 ( java 1)\VB\PustakaKu\obj\x86\Debug\PustakaKu.vbproj.GenerateResource.Cache
+F:\Kuliah\Kuliah_LP3I\Semester3\Pemrograman Berorientasi OBjek 1 ( java 1)\VB\PustakaKu\obj\x86\Debug\PustakaKu.vbprojResolveAssemblyReference.cache
+F:\Kuliah\Kuliah_LP3I\Semester3\Pemrograman Berorientasi OBjek 1 ( java 1)\VB\PustakaKu\obj\x86\Debug\PustakaKu.FPeminjam.resources

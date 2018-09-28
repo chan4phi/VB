@@ -6,10 +6,10 @@ Module modkon
     Public sql As String
     Public conn As New SqlConnection
 
-    Public str As String = "Data Source=100.0.0.50;" & _
-                            "Initial Catalog=dbMChanafi;" & _
-                            "Persist Security Info=True;" & _
-                            "UID=sa;PWD=script"
+    Public str As String = "Data Source=MIKEHAHN;" &
+                            "Initial Catalog=dbPerpus;" &
+                            "Persist Security Info=True;" &
+                            "UID=sa;PWD=m3ll1s4m4y4"
 
     Public Sub OpenKoneskis()
         If conn.State = ConnectionState.Closed Then
