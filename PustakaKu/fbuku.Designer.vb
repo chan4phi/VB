@@ -33,11 +33,14 @@ Partial Class fbuku
         Me.cbpenerbit = New System.Windows.Forms.ComboBox()
         Me.tbstok = New System.Windows.Forms.TextBox()
         Me.tbsinopsis = New System.Windows.Forms.TextBox()
-        Me.tbadd = New System.Windows.Forms.Button()
+        Me.btadd = New System.Windows.Forms.Button()
         Me.LVbuku = New System.Windows.Forms.ListView()
         Me.cmsLV = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btupdt = New System.Windows.Forms.Button()
+        Me.tbtemp = New System.Windows.Forms.TextBox()
+        Me.btsimpan = New System.Windows.Forms.Button()
         Me.cmsLV.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -124,14 +127,14 @@ Partial Class fbuku
         Me.tbsinopsis.Size = New System.Drawing.Size(375, 75)
         Me.tbsinopsis.TabIndex = 9
         '
-        'tbadd
+        'btadd
         '
-        Me.tbadd.Location = New System.Drawing.Point(27, 243)
-        Me.tbadd.Name = "tbadd"
-        Me.tbadd.Size = New System.Drawing.Size(75, 23)
-        Me.tbadd.TabIndex = 11
-        Me.tbadd.Text = "add"
-        Me.tbadd.UseVisualStyleBackColor = True
+        Me.btadd.Location = New System.Drawing.Point(27, 243)
+        Me.btadd.Name = "btadd"
+        Me.btadd.Size = New System.Drawing.Size(75, 23)
+        Me.btadd.TabIndex = 11
+        Me.btadd.Text = "add"
+        Me.btadd.UseVisualStyleBackColor = True
         '
         'LVbuku
         '
@@ -146,27 +149,56 @@ Partial Class fbuku
         '
         Me.cmsLV.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem, Me.DeleteToolStripMenuItem})
         Me.cmsLV.Name = "cmsLV"
-        Me.cmsLV.Size = New System.Drawing.Size(153, 70)
+        Me.cmsLV.Size = New System.Drawing.Size(108, 48)
         '
         'EditToolStripMenuItem
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'DeleteToolStripMenuItem
         '
         Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.DeleteToolStripMenuItem.Text = "Delete"
+        '
+        'btupdt
+        '
+        Me.btupdt.Location = New System.Drawing.Point(113, 243)
+        Me.btupdt.Name = "btupdt"
+        Me.btupdt.Size = New System.Drawing.Size(75, 23)
+        Me.btupdt.TabIndex = 13
+        Me.btupdt.Text = "Update"
+        Me.btupdt.UseVisualStyleBackColor = True
+        '
+        'tbtemp
+        '
+        Me.tbtemp.Location = New System.Drawing.Point(431, 85)
+        Me.tbtemp.Name = "tbtemp"
+        Me.tbtemp.Size = New System.Drawing.Size(100, 20)
+        Me.tbtemp.TabIndex = 14
+        Me.tbtemp.Visible = False
+        '
+        'btsimpan
+        '
+        Me.btsimpan.Location = New System.Drawing.Point(207, 243)
+        Me.btsimpan.Name = "btsimpan"
+        Me.btsimpan.Size = New System.Drawing.Size(75, 23)
+        Me.btsimpan.TabIndex = 15
+        Me.btsimpan.Text = "Simpan"
+        Me.btsimpan.UseVisualStyleBackColor = True
         '
         'fbuku
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(587, 535)
+        Me.Controls.Add(Me.btsimpan)
+        Me.Controls.Add(Me.tbtemp)
+        Me.Controls.Add(Me.btupdt)
         Me.Controls.Add(Me.LVbuku)
-        Me.Controls.Add(Me.tbadd)
+        Me.Controls.Add(Me.btadd)
         Me.Controls.Add(Me.tbsinopsis)
         Me.Controls.Add(Me.tbstok)
         Me.Controls.Add(Me.cbpenerbit)
@@ -194,10 +226,13 @@ Partial Class fbuku
     Friend WithEvents cbpenerbit As System.Windows.Forms.ComboBox
     Friend WithEvents tbstok As System.Windows.Forms.TextBox
     Friend WithEvents tbsinopsis As System.Windows.Forms.TextBox
-    Friend WithEvents tbadd As System.Windows.Forms.Button
+    Friend WithEvents btadd As System.Windows.Forms.Button
     Friend WithEvents LVbuku As System.Windows.Forms.ListView
     Friend WithEvents cmsLV As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents EditToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DeleteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents btupdt As System.Windows.Forms.Button
+    Friend WithEvents tbtemp As System.Windows.Forms.TextBox
+    Friend WithEvents btsimpan As System.Windows.Forms.Button
 
 End Class

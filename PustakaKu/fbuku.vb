@@ -6,7 +6,8 @@ Public Class fbuku
         Dim cmd, cmd2 As SqlCommand
         Dim dr, dr2 As SqlDataReader
         Dim strsql, sql2 As String
-
+        btupdt.Visible = False
+        btsimpan.Visible = False
         Try
             strsql = "select * from Pengarang"
             cmd = New SqlCommand(strsql, conn)
@@ -41,7 +42,7 @@ Public Class fbuku
         lihat_list_buku()
     End Sub
 
-    Private Sub tbadd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbadd.Click
+    Private Sub btadd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btadd.Click
         Dim query As String
         Dim cmd As SqlCommand
         Dim dr As SqlDataReader
@@ -51,24 +52,24 @@ Public Class fbuku
         Dim cek As Boolean = False
 
 
-            Call OpenKoneskis()
-            Dim query_id As String = "select max(BukuID)+1 as MXID from Buku"
-            cmd = New SqlCommand(query_id, conn)
-            dr = cmd.ExecuteReader
-            dr.Read()
-            uid = dr("MXID")
-            dr.Close()
+        Call OpenKoneskis()
+        Dim query_id As String = "select max(BukuID)+1 as MXID from Buku"
+        cmd = New SqlCommand(query_id, conn)
+        dr = cmd.ExecuteReader
+        dr.Read()
+        uid = dr("MXID")
+        dr.Close()
 
-            If (IsNumeric(tbstok.Text)) Then
-                cek = True
-            End If
+        If (IsNumeric(tbstok.Text)) Then
+            cek = True
+        End If
 
-            If (cek = False) Then
-                MsgBox("data input tidak sesuai")
-                Exit Sub
+        If (cek = False) Then
+            MsgBox("data input tidak sesuai")
+            Exit Sub
         End If
         Try
-            query = "insert into Buku (BukuID, Judul, Pengarang, Stok, Penerbit, Sinopsis) values ( " & uid & ", '" & tbjubuk.Text & "',  '" & pngrng(1) & "', '" & tbstok.Text & "', '" & pnrbt(1) & "', '" & tbsinopsis.Text & "')"
+            query = "insert into Buku (BukuID, Judul, Pengarang, Stok, Penerbit, Sinopsis) values ( " & uid & ", '" & tbjubuk.Text & "',  '" & pngrng(0) & "', '" & tbstok.Text & "', '" & pnrbt(0) & "', '" & tbsinopsis.Text & "')"
 
             cmd = New SqlCommand(query, conn)
             dr = cmd.ExecuteReader
@@ -145,5 +146,68 @@ Public Class fbuku
         MsgBox("Data berhasil di hapus")
         LVbuku.Clear()
         lihat_list_buku()
+    End Sub
+
+    Private Sub EditToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EditToolStripMenuItem.Click
+        Dim cmd As SqlCommand
+        Dim dr As SqlDataReader
+        Dim idbuku As String
+        btadd.Visible = False
+        btupdt.Visible = True
+
+        Try
+            idbuku = LVbuku.SelectedItems(0).Text
+
+            Call OpenKoneskis()
+            Dim query As String = " select Buku.*, Pengarang.PengarangID, Penerbit.NamaPenerbit, " & _
+                "Pengarang.NamaPengarang, Penerbit.PenerbitID from Buku " & _
+                "LEFT JOIN Penerbit on PenerbitID=Buku.Penerbit " & _
+                "LEFT JOIN Pengarang on Pengarang.PengarangID=Buku.Pengarang where Buku.BukuID = '" + idbuku + "'"
+
+            cmd = New SqlCommand(query, conn)
+            dr = cmd.ExecuteReader
+            dr.Read()
+
+            tbjubuk.Text = dr("Judul")
+            cbpengarang.Text = dr("PengarangID") & "-" & dr("NamaPengarang")
+            cbpenerbit.Text = dr("PenerbitID") & "-" & dr("NamaPenerbit")
+            tbstok.Text = dr("Stok")
+            tbsinopsis.Text = dr("Sinopsis")
+            tbtemp.Text = dr("BukuID")
+            dr.Close()
+            Call TutupKoneksi()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+    End Sub
+
+    Private Sub btupdt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btupdt.Click
+        btadd.Visible = True
+        btupdt.Visible = False
+
+        Dim query As String
+        Dim cmd As SqlCommand
+        Dim dr As SqlDataReader
+        Dim pngrng As Array = cbpengarang.Text.Split("-")
+        Dim pnrbt As Array = cbpenerbit.Text.Split("-")
+        Try
+            Call OpenKoneskis()
+            query = "update Buku set Judul = '" & tbjubuk.Text & "', Pengarang = '" & pngrng(0) & "', Penerbit = '" & pnrbt(0) & "' ,Stok = '" & tbstok.Text & "', Sinopsis = '" & tbsinopsis.Text & "' where bukuID = '" & tbtemp.Text & "'"
+            cmd = New SqlCommand(query, conn)
+            dr = cmd.ExecuteReader
+            dr.Close()
+            Call TutupKoneksi()
+            LVbuku.Clear()
+            lihat_list_buku()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btsimpan.Click
+
     End Sub
 End Class

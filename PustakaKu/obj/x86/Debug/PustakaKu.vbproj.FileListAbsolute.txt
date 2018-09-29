@@ -33,3 +33,14 @@ F:\Kuliah\Kuliah_LP3I\Semester3\Pemrograman Berorientasi OBjek 1 ( java 1)\VB\Pu
 D:\Mchanafi_ik2\VB\PustakaKu\obj\x86\Debug\PustakaKu.exe
 D:\Mchanafi_ik2\VB\PustakaKu\obj\x86\Debug\PustakaKu.xml
 D:\Mchanafi_ik2\VB\PustakaKu\obj\x86\Debug\PustakaKu.pdb
+D:\Mchanafi_ik2\VB\PustakaKu\bin\Debug\PustakaKu.exe
+D:\Mchanafi_ik2\VB\PustakaKu\bin\Debug\PustakaKu.pdb
+D:\Mchanafi_ik2\VB\PustakaKu\bin\Debug\PustakaKu.xml
+D:\Mchanafi_ik2\VB\PustakaKu\obj\x86\Debug\PustakaKu.vbprojResolveAssemblyReference.cache
+D:\Mchanafi_ik2\VB\PustakaKu\obj\x86\Debug\PustakaKu.fbuku.resources
+D:\Mchanafi_ik2\VB\PustakaKu\obj\x86\Debug\PustakaKu.FPeminjam.resources
+D:\Mchanafi_ik2\VB\PustakaKu\obj\x86\Debug\PustakaKu.Resources.resources
+D:\Mchanafi_ik2\VB\PustakaKu\obj\x86\Debug\PustakaKu.vbproj.GenerateResource.Cache
+D:\Mchanafi_ik2\vb2\VB\PustakaKu\obj\x86\Debug\PustakaKu.exe
+D:\Mchanafi_ik2\vb2\VB\PustakaKu\obj\x86\Debug\PustakaKu.xml
+D:\Mchanafi_ik2\vb2\VB\PustakaKu\obj\x86\Debug\PustakaKu.pdb
