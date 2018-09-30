@@ -28,12 +28,14 @@ Partial Class FPeminjam
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tbNama = New System.Windows.Forms.TextBox()
         Me.LVpmnjm = New System.Windows.Forms.ListView()
-        Me.tbAlmt = New System.Windows.Forms.TextBox()
-        Me.tbNoTelp = New System.Windows.Forms.TextBox()
-        Me.btSimpan = New System.Windows.Forms.Button()
         Me.cmspmjnm = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tbAlmt = New System.Windows.Forms.TextBox()
+        Me.tbNoTelp = New System.Windows.Forms.TextBox()
+        Me.btSimpan = New System.Windows.Forms.Button()
+        Me.btubah = New System.Windows.Forms.Button()
+        Me.tbid = New System.Windows.Forms.TextBox()
         Me.cmspmjnm.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -80,6 +82,24 @@ Partial Class FPeminjam
         Me.LVpmnjm.TabIndex = 5
         Me.LVpmnjm.UseCompatibleStateImageBehavior = False
         '
+        'cmspmjnm
+        '
+        Me.cmspmjnm.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3})
+        Me.cmspmjnm.Name = "cmspmjnm"
+        Me.cmspmjnm.Size = New System.Drawing.Size(108, 48)
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(107, 22)
+        Me.ToolStripMenuItem2.Text = "Edit"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(107, 22)
+        Me.ToolStripMenuItem3.Text = "Delete"
+        '
         'tbAlmt
         '
         Me.tbAlmt.Location = New System.Drawing.Point(94, 63)
@@ -104,29 +124,30 @@ Partial Class FPeminjam
         Me.btSimpan.Text = "Simpan"
         Me.btSimpan.UseVisualStyleBackColor = True
         '
-        'cmspmjnm
+        'btubah
         '
-        Me.cmspmjnm.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3})
-        Me.cmspmjnm.Name = "cmspmjnm"
-        Me.cmspmjnm.Size = New System.Drawing.Size(108, 48)
+        Me.btubah.Location = New System.Drawing.Point(465, 78)
+        Me.btubah.Name = "btubah"
+        Me.btubah.Size = New System.Drawing.Size(75, 23)
+        Me.btubah.TabIndex = 9
+        Me.btubah.Text = "Ubah"
+        Me.btubah.UseVisualStyleBackColor = True
         '
-        'ToolStripMenuItem2
+        'tbid
         '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
-        Me.ToolStripMenuItem2.Text = "Edit"
-        '
-        'ToolStripMenuItem3
-        '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
-        Me.ToolStripMenuItem3.Text = "Delete"
+        Me.tbid.Location = New System.Drawing.Point(452, 22)
+        Me.tbid.Name = "tbid"
+        Me.tbid.Size = New System.Drawing.Size(100, 20)
+        Me.tbid.TabIndex = 10
+        Me.tbid.Visible = False
         '
         'FPeminjam
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(647, 384)
+        Me.Controls.Add(Me.tbid)
+        Me.Controls.Add(Me.btubah)
         Me.Controls.Add(Me.btSimpan)
         Me.Controls.Add(Me.tbNoTelp)
         Me.Controls.Add(Me.tbAlmt)
@@ -136,7 +157,7 @@ Partial Class FPeminjam
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "FPeminjam"
-        Me.Text = "FPeminjam"
+        Me.Text = "Member"
         Me.cmspmjnm.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -156,4 +177,6 @@ Partial Class FPeminjam
     Friend WithEvents cmspmjnm As ContextMenuStrip
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
+    Friend WithEvents btubah As Button
+    Friend WithEvents tbid As TextBox
 End Class

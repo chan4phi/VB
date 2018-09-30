@@ -2,12 +2,13 @@
 Public Class fbuku
 
     Private Sub fbuku_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.MdiParent = Fmain
         Call OpenKoneskis()
         Dim cmd, cmd2 As SqlCommand
         Dim dr, dr2 As SqlDataReader
         Dim strsql, sql2 As String
         btupdt.Visible = False
-        btsimpan.Visible = False
+
         Try
             strsql = "select * from Pengarang"
             cmd = New SqlCommand(strsql, conn)
@@ -203,11 +204,10 @@ Public Class fbuku
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
-
-
+        MsgBox("Data berhasil diubah")
+        LVbuku.Clear()
+        Call bersih()
+        lihat_list_buku()
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btsimpan.Click
-
-    End Sub
 End Class

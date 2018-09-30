@@ -40,7 +40,6 @@ Partial Class fbuku
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btupdt = New System.Windows.Forms.Button()
         Me.tbtemp = New System.Windows.Forms.TextBox()
-        Me.btsimpan = New System.Windows.Forms.Button()
         Me.cmsLV.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -165,7 +164,7 @@ Partial Class fbuku
         '
         'btupdt
         '
-        Me.btupdt.Location = New System.Drawing.Point(113, 243)
+        Me.btupdt.Location = New System.Drawing.Point(26, 243)
         Me.btupdt.Name = "btupdt"
         Me.btupdt.Size = New System.Drawing.Size(75, 23)
         Me.btupdt.TabIndex = 13
@@ -180,21 +179,11 @@ Partial Class fbuku
         Me.tbtemp.TabIndex = 14
         Me.tbtemp.Visible = False
         '
-        'btsimpan
-        '
-        Me.btsimpan.Location = New System.Drawing.Point(207, 243)
-        Me.btsimpan.Name = "btsimpan"
-        Me.btsimpan.Size = New System.Drawing.Size(75, 23)
-        Me.btsimpan.TabIndex = 15
-        Me.btsimpan.Text = "Simpan"
-        Me.btsimpan.UseVisualStyleBackColor = True
-        '
         'fbuku
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(587, 535)
-        Me.Controls.Add(Me.btsimpan)
         Me.Controls.Add(Me.tbtemp)
         Me.Controls.Add(Me.btupdt)
         Me.Controls.Add(Me.LVbuku)
@@ -233,6 +222,5 @@ Partial Class fbuku
     Friend WithEvents DeleteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents btupdt As System.Windows.Forms.Button
     Friend WithEvents tbtemp As System.Windows.Forms.TextBox
-    Friend WithEvents btsimpan As System.Windows.Forms.Button
 
 End Class

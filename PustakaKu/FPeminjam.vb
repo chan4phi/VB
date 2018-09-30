@@ -1,7 +1,9 @@
 ﻿Imports System.Data.SqlClient
 Public Class FPeminjam
     Private Sub FPeminjam_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.MdiParent = Fmain
         lihat_list_pmjnm()
+        btubah.Visible = False
     End Sub
     Private Sub lihat_list_pmjnm()
         Dim cmd As SqlCommand
@@ -43,7 +45,7 @@ Public Class FPeminjam
         Dim cmd As SqlCommand
         Dim dr As SqlDataReader
         Dim uid As String
-
+        btubah.Visible = False
 
         Call OpenKoneskis()
         Dim query_id As String = "select max(peminjamID)+1 as MXID from Peminjam"
@@ -76,6 +78,9 @@ Public Class FPeminjam
         Dim cmd As SqlCommand
         Dim dr As SqlDataReader
         idmmbr = LVpmnjm.SelectedItems(0).Text
+        btSimpan.Visible = False
+        btubah.Visible = True
+
 
         Try
             Call OpenKoneskis()
@@ -92,5 +97,65 @@ Public Class FPeminjam
         MsgBox("Data berhasil di hapus")
         LVpmnjm.Clear()
         lihat_list_pmjnm()
+    End Sub
+
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        Dim cmd As SqlCommand
+        Dim dr As SqlDataReader
+
+        btSimpan.Visible = False
+        btubah.Visible = True
+        Dim mbrid As String
+
+        Try
+            mbrid = LVpmnjm.SelectedItems(0).Text
+
+            Call OpenKoneskis()
+
+            Dim query As String = "select * from Peminjam where peminjamID= '" + mbrid + "'"
+            cmd = New SqlCommand(query, conn)
+            dr = cmd.ExecuteReader
+            dr.Read()
+
+            tbid.Text = mbrid
+            tbNama.Text = dr("NamaPeminjam")
+            tbAlmt.Text = dr("Alamat")
+            tbNoTelp.Text = dr("NoTelp")
+            dr.Close()
+            Call TutupKoneksi()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+    End Sub
+
+    Private Sub btubah_Click(sender As Object, e As EventArgs) Handles btubah.Click
+        Dim cm As SqlCommand
+        Dim query As String
+        Dim dr As SqlDataReader
+
+        Try
+            Call OpenKoneskis()
+            query = "update Peminjam set NamaPeminjam = '" & tbNama.Text & "', Alamat = '" & tbAlmt.Text & "', NoTelp= '" & tbNoTelp.Text & "' where peminjamID= '" & tbid.Text & "'"
+            cm = New SqlCommand(query, conn)
+            dr = cm.ExecuteReader
+            dr.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Call TutupKoneksi()
+
+        MsgBox("Data berhasil di ubah")
+        btubah.Visible = False
+        btSimpan.Visible = True
+        LVpmnjm.Clear()
+        Call kosong()
+        lihat_list_pmjnm()
+    End Sub
+    Private Sub kosong()
+        tbAlmt.Text = ""
+        tbNama.Text = ""
+        tbNoTelp.Text = ""
+        tbid.Text = ""
     End Sub
 End Class
