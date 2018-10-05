@@ -23,6 +23,7 @@ Public Class FoLogin
             Else
                 MsgBox("Anda Memasukkan data yang salah", vbCritical, "Pesan")
             End If
+            dr.Close()
             Call TutupKoneksi()
         Catch ex As Exception
             MsgBox(ex.ToString)
